@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+a {
+  color: #3273dc;
+}
+
+.hero.is-orange {
+  /* background-color: #EC963B; */
+  color: #FFD701;
+  background: #0279AF;
+}
+
+.hero.is-light-orange {
+  background-color: #DDE7F4;
+}
+
+.orange {
+  color: #0279AF;
+}
+
+
+.logo {
+  height: 1.8em;
+  margin-bottom: -0.4em;
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 2.5rem;
+    color: black;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+   color: rgb(111, 111, 111) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.tldr {
+  font-size: 1.9rem;
+}
+
+.figure-overview {
+  width: 95%;
+  margin-top: 10px;
+}
+
+.centered-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caption {
+  font-weight: bold;
+  margin: 20px 6% 35px 6%; 
+  padding: 0 0 0 2%;
+  /* border-left: thick solid #B22222; */
+  border-left: thick solid #0279AF;
+  /* color: #780808; */
+}
+
+.grabbable {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.intext {
+  height: 1.1em;
+}
+
+.intext-big {
+  height: 1.3em;
+}
+
+.green {
+  color: #007f00;
+}
+
+.gray {
+  color: #939393;
+}
+
+.red {
+  color: #B22222;
+}
+
+.devilish {
+  color: #aa8dd8;
+}
+
+.textsc {
+  font-variant-caps: small-caps;
+}
+
+.example-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.example-buttons-inner {
+  margin: 5px 5%;
+  flex: 1;
+}
+
+.example-button {
+  margin-top: 5px;
+}
+
+.example-cat {
+  padding-bottom: 5px;
+  border-bottom: 0px solid #aa8dd8;
+}
+
+button.active {
+  background-color: #bbacd3;
+}
+
+.example {
+  display: none;
+}
+
+.example.active {
+  display: block;
+}
+
+.chat-container {
+  width: 90%;
+  margin-top: 20px;
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.chat-container.left {
+  margin-left: 5px;
+  margin-right: auto;
+}
+
+.chat-container.right {
+  margin-right: 5px;
+  margin-left: auto;
+}
+
+.chat-header {
+  background-color: #111;
+  color: #fff;
+  padding: 10px 10px 10px 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-body {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #fbfbfb;
+  color: #333;
+  font-family: 'Courier', sans-serif, monospace;
+  overflow-y: scroll; 
+  max-height: 350px;
+}
+
+.chat-detector {
+  background-color: #0a2f48;
+  color: #fff;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: none;
+}
+
+.chat-detector.active {
+  display: block;
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.emoji-label {
+  height: 1.2em;
+  margin-bottom: -0.2em;
+}
+
+#detectorMode {
+  background-color: #5dadec;
+}
+
+.switch[type=checkbox]+label {
+  padding-top: 0;
+}
+
+.chat-red1.active {
+  color: #880000;
+}
+.chat-red2.active {
+  color: #FF0000;
+}
+.chat-green1.active {
+  color: #008000;
+}
+.chat-green2.active {
+  color: #03ad55;
+}
+.chat-black1.active {
+  color: #000000;
+}
+.chat-black2.active {
+  color: #555555;
+}
+
+#BibTeX {
+  background: #fbfbfb;
+  font-family:'Courier New', Courier, monospace;
+  border: 1px solid #ddd;
+  overflow: auto;
+  max-width: 80vw;
+}
+
+.footer {
+  display: block;
+  margin: auto;
+  font-size: 10px;
+  padding: 3rem 1.5rem 3rem;
+}
+
+/* #leaderboard-generic,
+#leaderboard-specific {
+  display: none;
+} */
+
+#leaderboard-toggle-buttons.buttons.is-centered {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+/* If you'd like the selected button to have a clearly different style,
+    you can define a custom rule for .button.is-selected:
+*/
+.button.is-selected {
+  background-color: #B22222 !important; /* Example custom color */
+  border-color: #B22222 !important;
+  color: #fff !important;
+}
+
+.button.is-selected:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.125em #b222227d  !important;
+}
+
+#leaderboard-toggle-buttons .button:not(.is-selected) {
+  background-color: #EC963B !important;
+  border-color: #EC963B !important;
+  color: #fff !important;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;     /* slight highlight on hover */
+}
+
+th[data-sort-col] {
+  cursor: pointer;               /* show pointer on hover */
+  transition: background-color 0.2s;
+  white-space: normal;
+}
+
+th[data-sort-col]:hover {
+  background-color: #f0f0f0;     /* slight highlight on hover */
+}
+
+.table-image {
+  max-width: 18px; /* Optional: set a maximum width */
+  height: auto;  /* Maintain aspect ratio */
+  width: auto;  /* Maintain aspect ratio */
+}
+
+.table-container {
+  /* force the container to a fixed max height, scrolling once overflowed */
+  max-height: 580px;
+  overflow-y: auto;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.table-container table {
+  width: 100%;
+  table-layout: fixed;     /* ensures all columns are a fixed width */
+  border-collapse: collapse;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Headers centered horizontally, contents centered vertically */
+.table-container thead th:nth-child(1) {
+  text-align: left;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+
+.table-container thead th:nth-child(2) {
+  text-align: left;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+
+.table-container thead th:nth-child(n+3) {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+
+/* Cells vertically centered */
+.table-container tbody td {
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+
+/* First two columns left-aligned */
+.table-container tbody td:nth-child(1),
+.table-container tbody td:nth-child(2) {
+  text-align: left;
+}
+
+/* Remaining columns right-aligned */
+.table-container tbody td:nth-child(n+3) {
+  text-align: right;
+}
+
+/* Example fixed widths per column (optional):
+   Adjust these as needed, but make sure
+   they add up sensibly within 100% total width. */
+.table-container th:nth-child(1),
+.table-container td:nth-child(1) {
+  width: 10%;
+}
+.table-container th:nth-child(2),
+.table-container td:nth-child(2) {
+  width: 33%;
+}
+.table-container th:nth-child(3),
+.table-container td:nth-child(3) {
+  width: 19%;
+}
+.table-container th:nth-child(4),
+.table-container td:nth-child(4) {
+  width: 19%;
+}
+
+.table-container th:nth-child(4),
+.table-container td:nth-child(4) {
+  width: 19%;
+}
+
+.tabs.is-toggle li.is-active a,.hero.is-light .tabs.is-toggle li.is-active a:hover {
+  background-color: #0279AF;
+}
+.hero.is-light .tabs.is-toggle li.is-active a {
+  background-color: #DDE7F4;
+}
+@media screen and (min-width: 769px), print {
+  .column.is-thirty, .column.is-thirty-tablet {
+    flex: none;
+    width: 30%;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .column.is-fifty, .column.is-fifty-tablet {
+    flex: none;
+    width: 50%;
+  }
+}
+
+img.figure-algorithm {
+  width: 100%;
+}
+img.figure-nfa {
+  width: 80%;
+}
+img.figure-results {
+  margin-bottom: 20px;
+}
+
+/* Header link styles */
+.header-link {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.header-link:hover {
+  color: #0279AF !important;
+  text-decoration: none !important;
+}
+
+/* Smooth scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}

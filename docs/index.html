@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- TODO adapt-->
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="We enable constrained decoding for diffusion LLMs with CFGs, such as JSON and C++, guaranteeing syntactic correctness and improving functional correctness.">
+  <meta property="og:title" content="Constrained Decoding of Diffusion LLMs with CFGs">
+  <meta property="og:description" content="We enable constrained decoding for diffusion LLMs with CFGs, such as JSON and C++, guaranteeing syntactic correctness and improving functional correctness.">
+  <meta property="og:url" content="https://constrained-diffusion.ai">
+
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="https://constrained-diffusion.ai/static/images/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:title" content="Constrained Decoding of Diffusion LLMs with CFGs">
+  <meta name="twitter:description" content="We enable constrained decoding for diffusion LLMs with CFGs, such as JSON and C++, guaranteeing syntactic correctness and improving functional correctness.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="https://constrained-diffusion.ai/static/images/social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="large language model, large language models, LLM, code generation, constrained decoding, diffusion LLM, diffusion LLMs, multi-region infilling, context-free grammar, CFG, JSON, C++, syntactic correctness, functional correctness, code infilling, code synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.svg">
+
+  <title>Constrained Decoding of Diffusion LLMs with CFGs</title>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css"> <!-- our css -->
+
+  <script defer="defer" src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/index.js"></script> <!-- our JS -->
+  		<script type="text/javascript" src="static/js/libgif.js"></script>
+		<script type="text/javascript" src="static/js/rubbable.js"></script>
+
+<body>
+
+  <section class="hero is-light-orange">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2 class="title publication-title">Constrained Decoding of Diffusion LLMs<br>with Context-Free Grammars</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.sri.inf.ethz.ch/people/niels" target="_blank">Niels Mündler</a>,</span>
+              <span class="author-block">
+                <a href="https://www.sri.inf.ethz.ch/people/jasper" target="_blank">Jasper Dekoninck</a>,</span>
+              <span class="author-block">
+                <a href="https://www.sri.inf.ethz.ch/people/martin" target="_blank">Martin Vechev</a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <img class="logos" src="static/images/institution-logos-black.svg" alt="ETH, SRI Logo" style="height: 0.75em;"/>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2508.10111" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/eth-sri/constrained-diffusion" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!--<span class="link-block">
+                  <a href="https://huggingface.co/collections/eth-sri/constrained-diffusion-tasks-689dc25e7ae9a5b6da001e96" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="static/images/hf-logo-pirate.png" style="width: 1em; height: 1em">
+                    </span>
+                    <span>Datasets</span>
+                  </a>
+                </span>-->
+
+                <span class="link-block">
+                  <a href="#demo-section" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="static/images/circle-play-solid-full.svg" style="height: 1.2em;">
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span>
+
+              </div> <!-- publications links -->
+            </div> <!-- column for publications links -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--<section class="hero is-light-orange">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-justified tldr">
+            <b>TL;DR</b>:
+            We generalize constrained decoding, enabling multi-region infilling and diffusion LLMs. We guarantee syntactic correctness, increasing functional correctness up to 7%.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="column has-text-centered">
+          <!--<h2 class="title is-3">Key <span class="orange">Takeaways</span></h2>-->
+          <div class="has-text-justified">
+            <p>
+              </p><ul>
+                <li><div class="caption">Our work enables constrained decoding for diffusion LLMs and multi-region infilling.</div></li>
+                <li><div class="caption">Given a formal syntax, for example of JSON or C++, our method guarantees that the LLM adheres to this syntax, even when outputs have many infilling regions or are generated out-of-order.</div></li>
+                <li><div class="caption">We demonstrate a consistent improvement in functional correctness of up to 7%, with an average of 1-2%, with a small computational overhead.</div></li>
+              </ul>
+            <p></p>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="multi-region-infilling"><a href="#multi-region-infilling" class="header-link">What is special about multi-region infilling and diffusion LLMs?</a></h2>
+          </div>
+        </div>
+      <div class="columns is-centered has-text-centered">
+          <div class="column is-one-fifth">
+          <div class="centered-figure">
+            <img class="figure-algorithm" src="static/images/paradigms.svg" alt="Different generation paradigms">
+          </div>
+          </div>
+        <div class="column is-three-fifths">
+          <div class="content has-text-centered has-text-justified">
+            <p>
+              Classical LLM generation is strictly left-to-right. The classical setting is to generate the next token to append to a given fixed prefix (PRE). This allowed constrained decoding method to rely on techniques to determine whether an output is a valid prefix of any word in the target language.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-centered has-text-justified">
+
+            <p>
+              Multi-Region Infilling complicates the setting by allowing not only a fixed prefix, but also a fixed suffix (FIM) and fixed regions in between (MRI). This means the constraining method also needs to take into account the fixed regions when determining admissability of a partial output.
+            </p>
+            <p>
+              Diffusion LLMs (DLM) further generate tokens in any order, i.e., they may choose to generate a token at the end of the output or in the middle of the output. This means that the constraining method needs to be able to handle arbitrary updates of a partial output, which is not possible with classical constrained decoding methods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="method"><a href="#method" class="header-link">How does the method work?</a></h2>
+        <div class="centered-figure">
+          <img class="figure-overview" src="static/images/overview.svg" alt="Overview">
+        </div>
+          <div class="content has-text-centered has-text-justified">
+            <div class="caption">
+              We check partial output validity by computing the intersection of the target language's context-free grammar (CFG) with the language of all possible completions.
+            </div>
+            <p>
+We first generalize the formal framework of constrained decoding by adapting the standard constrained decoding algorithm to unordered updates of a partial output with arbitrarily many infilling regions. While designed for diffusion LLMs, this naturally subsumes multi-region infilling, fill-in-the-middle and classical prefix-completion. The decoding process is illustrated in the picture above. The model iteratively generates proposals to insert a token in a specific location of the partial output, for example <span class="is-family-monospace">foo()</span> into the first infilling region. We verify the proposal's validity by intersecting the target language's CFG with the language of all possible partial output completions. This intersection is non-empty if and only if a valid completion exists.
+            </p>
+            <p>
+A key technical challenge to this approach is to efficiently determine the emptiness of the language intersection. We first show that the language of all possible completions is a regular language, enabling standard formal language operations to generate the intersection language. The intersection language is however prohibitively large. We address this by applying optimizations for size reduction, such as employing a custom normal form. Further, we perform an implicit search over the intersection language to avoid generating the entire language, and all non-generating symbols in particular.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light" id="demo-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="demo"><a href="#demo" class="header-link"><img class="logo" src="static/images/circle-play-solid-full-black.svg" style="width: 1em; height: 1em; margin-bottom: -0.15em; margin-right: 0.25em;">Demo</a></h2>
+          <div class="content has-text-justified">
+            The demo below is based on <a href="https://github.com/ML-GSAI/LLaDA/tree/main">LLaDA 7B</a>, a diffusion model, generating C++ code for a HumanEval task in our dataset. We highlight all rejected tokens, which are correctly determined to violate syntax during the generation process.
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+<blockquote>Task: Given a non-empty vector of integers, return the sum of all of the odd elements that are in even positions.</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="tabs is-centered is-toggle is-toggle-rounded" id="demo-tabs">
+            <ul>
+              <li class="is-active" data-choose="constrained"><a>Constrained</a></li>
+              <li data-choose="unconstrained"><a>Unconstrained</a></li>
+            </ul>
+          </div>
+          <div class="centered-figure">
+            <a class="grabbable">
+            <p class="has-text-centered" id="loading-text">Demo loading...</p>
+            <img id="constrained-demo" style="display: none;" class="figure-demo" src="static/images/animation/words_grid_animation_constrained.gif" alt="Demo constrained decoding">
+            <img id="unconstrained-demo" style="display: none;"class="figure-demo" src="static/images/animation/words_grid_animation_unconstrained.gif" alt="Demo unconstrained decoding">
+          </a>
+          </div>
+        <div class="tabs is-centered is-toggle is-toggle-rounded">
+          <ul>
+            <li>
+              <a><i class="fas fa-pause"></i></a>
+            </li>
+              <li class="is-active">
+                <a><i class="fas fa-play"></i></a>
+                </li>
+                <li>
+                <a><i class="fas fa-step-backward"></i></a>
+                </li>
+                <li>
+                <a><i class="fas fa-undo"></i></a>
+                </li>
+                <li>
+                <a><i class="fas fa-redo"></i></a>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <!--<div class="column is-one-half">
+          <div class="centered-figure">
+            <img class="figure-demo" src="static/images/animation/words_grid_animation_constrained.gif" alt="Demo">
+          </div>
+        </div>-->
+    </div>
+  </section>
+
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="techniques"><a href="#techniques" class="header-link">What are your key techniques?</a></h2>
+        </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-fifty">
+          <div class="content has-text-centered has-text-justified">
+            <p>
+              We formalize the constrained decoding problem for multi-region infilling and diffusion LLMs, shown next to this text. The formalization allows us to reason about the requirements of an incremental verifier for constraining diffusion LLMs and multi-region infilling.
+              We define a formal infilling problem as the problem of deciding whether an output with infilling regions can be infilled to be a valid output of a target language. We then show how to reduce this problem to a standard intersection emptiness problem, which is well-studied in the literature.
+            </p>
+            </div>
+            </div>
+          <div class="column is-thirty">
+          <div class="centered-figure">
+            <img class="figure-algorithm" src="static/images/constrained-algo.svg" alt="Generalized constrained decoding algorithm">
+          </div>
+        </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+          <div class="content has-text-centered has-text-justified">
+            <p>
+              The intersection we compute is the intersection of two constraints on the model output: the target language's context-free grammar (CFG) and the language of all possible completions of the partial output. The latter is a regular language, which can be described by a non-deterministic finite automaton (NFA), like the one shown below. We show how to construct this NFA from the partial output and the target language's CFG, and how to efficiently check whether the intersection of the two languages is empty.
+            </p>
+          </div>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="centered-figure">
+            <img class="figure-nfa" src="static/images/nfa.svg" alt="Constructed NFA from intersection">
+          </div>
+        </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+          <div class="content has-text-centered has-text-justified">
+            <p>
+              Computing the intersection of a CFG and a regular language is a well-studied problem in formal language theory, but it is quite expensive. The intersection itself can be described by a CFG and requires a DFA and CFG in normal form, but has a cubic number of productions, in the general case. DFAs can be minimized efficiently, but for CFGs no general minimization is possible. We therefore apply a number of optimizations to reduce the size of the intersection, such as using a normal form that is obtained with a linear increase in symbols instead of quadratic, left factoring, and removing non-generating symbols. Crucially, we then search implicitly over the intersection language, avoiding the need to generate the entire language, and all non-generating symbols in particular.
+            </p>
+          </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="results"><a href="#results" class="header-link">What are the results of your method?</a></h2>
+          <div class="content has-text-centered has-text-justified">
+            <p>
+              We observe a drastic increase in syntactic correctness, with 99.5% of the generated solutions being syntactically correct. This leads to an increase in functional correctness of up to 7% for the best-performing model. We also show that our method is efficient, less than doubling the decoding time compared to standard methods.
+            </p>
+            </div>  
+        <div class="centered-figure">
+            <img class="figure-results" src="static/images/fim-results.svg" alt="Results on MRI">
+            </div>
+            <div class="content has-text-centered has-text-justified">
+            <p>We evaluate a number of recent code infilling models on a HumanEval translation into C++. As can be seen in the above table, our method increases syntactic correctness significantly across all models and numbers of infilling regions. Our method recovers a syntactically valid completion in 95.8% of instances.
+In the lower half of the table, we observe that constraining consistently increases functional correctness, on average by 2.8%. This is expected, as syntactically incorrect completions can not be functionally correct and are effectively prevented by our method.</p>
+            </div>
+
+        <div class="centered-figure">
+            <img class="figure-results" src="static/images/dlm-results.svg" alt="Results on DLM">
+            </div>
+            <div class="content has-text-centered has-text-justified">
+            <p>We further design experiments for SOTA diffusion LLMs on C++ HumanEval tasks, JSON Schema compliant data extraction and representing chemical molecules in SMILES. We observe that our method consistently increases syntactic correctness for all tasks and models, as shown in the table. We observe that our method recovers the failed instances, increasing to 99.2%. In JSON Schema extraction, constrained decoding with completion achieves 100% syntactic correctness.
+              </p>
+              <p>
+As shown in the lower half of the table, the positive effect of constraining on functional correctness is also present for DLMs, with an average increase in functional correctness of 2.2%. Notably, Dream 7B performance on JSON Schema extraction increases by 6.9%. In the SMILES setting, where models perform very poorly at only 1.5% average correctness, syntactic constraints are not able to improve functional correctness significantly, achieving only a modest average increase of 0.2%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-5"><a href="#citation" class="header-link">Citation</a></h2>
+      <pre id="BibTeX">@article{muendler2025constraineddiffusion,
+        title={Constrained Decoding of Diffusion LLMs with Context-Free Grammars},
+        author={Niels Mündler and Jasper Dekoninck and Martin Vechev},
+        year={2025},
+        eprint={2508.10111},
+        archivePrefix={arXiv},
+        url={https://arxiv.org/abs/2508.10111},
+}</pre>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <button class="button is-small" onclick="copyBibtex()">📋 Copy to clipboard</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer is-light">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            Website and project are part of the <b><a href="https://sri.inf.ethz.ch/" target="_blank">Secure, Reliable and Intelligent
+                Systems Lab at ETH Zurich</a></b>.
+            <br>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> and on the basis of <a href="https://baxbench.com/" target="_blank">baxbench.com</a>. 
+            <br>
+            <br>
+            <img class="logos" src="static/images/institution-logos-black.svg" alt="ETH, SRI Logo" style="height: 1em;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body></html>

@@ -1,0 +1,17 @@
+fire
+transformers==4.52.2
+datasets==3.6.0
+accelerate
+regex
+range-ex
+jsonschema
+stopit
+cachier
+-e ./rustformlang_bindings
+frozendict
+tabulate
+tiktoken
+hf_xet
+protobuf
+pytest-timeout
+-e .

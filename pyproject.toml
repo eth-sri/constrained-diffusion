@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "constrained_diffusion"
+version = "0.0.1"
+authors = [
+    { name = "Niels Mündler", email = "niels.muendler@inf.ethz.ch"},
+    { name = "Jasper Dekoninck", email = "jasper.dekoninck@inf.ethz.ch"}
+]
+description = "Constrained decoding of diffusion LLMs for context-free grammars"
+license = { text = "MIT" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+"fire",
+"transformers",
+"datasets",
+"accelerate",
+"regex",
+"range-ex",
+"jsonschema",
+"stopit",
+"cachier",
+"frozendict",
+"pytest",
+"pytest-timeout"
+]
+
+[tool.setuptools.packages.find]
+include = ["constrained_diffusion", "eval"]

@@ -1,0 +1,2 @@
+partialsmiles
+rdkit

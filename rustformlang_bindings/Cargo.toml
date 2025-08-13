@@ -1,0 +1,15 @@
+[package]
+name = "rustformlang_bindings"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "rustformlang"
+crate-type = ["cdylib"]
+
+[dependencies]
+hashbrown = "0.15.4"
+pyo3 = {version="0.24.0", features = ["hashbrown"]}
+regex-syntax = "0.4"
+rustformlang = { path = "../rustformlang" }

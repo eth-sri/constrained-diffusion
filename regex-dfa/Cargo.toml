@@ -1,0 +1,40 @@
+[package]
+name = "regex_dfa"
+version = "0.5.0"
+authors = ["Joe Neeman <joeneeman@gmail.com>",
+           "Niels Mündler <niels.muendler@inf.ethz.ch>"]
+description = "A crate for turning regexes into DFAs."
+repository = "http://github.com/eth-sri/constrained-diffusion/regex-dfa"
+readme = "README.md"
+license = "MIT/Apache-2.0"
+edition = "2021"
+
+[dependencies]
+itertools = "0.4"
+lazy_static = "0.1"
+memchr = "0.1"
+num-traits = "0.1"
+range-map = "0.1.5"
+regex-syntax = "0.4"
+utf8-ranges = "0.1"
+
+[dev-dependencies]
+matches = "0.1"
+quickcheck = "0.2"
+regex = "0.1.41"
+rand = "0.3"
+serde_json = "0.6"
+
+
+[[test]]
+name = "examples"
+path = "tests/matches.rs"
+
+[[test]]
+name = "crate"
+path = "src/lib.rs"
+
+[profile.bench]
+debug = true
+lto = true
+
