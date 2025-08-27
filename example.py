@@ -142,7 +142,7 @@ def main():
     print(prompt)
     print("Took {:.2f} seconds to generate.".format(time_taken_autocompletion))
     print("----------- Code ------------------")
-    print(autocompletion)
+    print(autocompletion or extracted)
 
 
 if __name__ == "__main__":

@@ -42,7 +42,7 @@ seeds = [0, 1, 2, 3]
 configs = [
     ("", "_synth"),
 ]
-constraineds = [True]
+constraineds = [True, False]
 
 
 def find_available_gpus(gpus, n):
@@ -132,7 +132,7 @@ while remaining_configs or running_configs:
     else:
         suffix = "nc"
     command = (
-        f"PYTHONPATH=. CUDA_VISIBLE_DEVICES={','.join(str(i) for i in cuda_devices)} python3 -m constrained_outoforder.eval.mri.generic_inference "
+        f"PYTHONPATH=. CUDA_VISIBLE_DEVICES={','.join(str(i) for i in cuda_devices)} python3 -m constrained_diffusion.eval.mri.generic_inference "
         f"--max-tokens 256 --model_name {model} --seed {seed} --temp {temp} --trace False  --dataset-name '{subset}' --inject_gap_size {gap_size} --max_total_injections {gap_size} "
         f"--constrained {constrained} --output_file 'results/{subset.replace('/', '_')}_{model.replace('/', '_')}_s={seed}_t={temp}_gs={gap_size}{name}_{suffix}.jsonl' {config}"
     )

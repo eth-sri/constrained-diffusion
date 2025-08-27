@@ -32,15 +32,15 @@ eval/
 For the MRI models, we provide an inference harness for the C++ HumanEval multi-region dataset.
 To execute task 11 on the 1-region dataset with constraints and traces enabled, use the following command:
 ```bash
-python3 -m constrained_diffusion.eval.mri.generic_inference
-  --max-tokens 256
-  --model_name deepseek-ai/deepseek-coder-6.7b-base
-  --seed 0
-  --temp 1
-  --dataset-name HumanEval/MRI/cpp/1
-  --constrained True
-  --trace True
-  --task_id /11_
+python3 -m constrained_diffusion.eval.mri.generic_inference \
+  --max-tokens 256 \
+  --model_name deepseek-ai/deepseek-coder-6.7b-base \
+  --seed 0 \
+  --temp 1 \
+  --dataset-name HumanEval/MRI/cpp/1 \
+  --constrained True \
+  --trace True \
+  --task_id /11_ 
 ```
 
 For the diffusion LLMs, use the following command for the SMILES dataset.

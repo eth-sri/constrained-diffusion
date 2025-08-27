@@ -20,27 +20,21 @@ def compute_needed_gpus(size_model, size_gpu):
 
 subsets = [
     "THUDM/humaneval-x/cpp",
-    "jsonschema_r",
-    # "nmuendler/json-mode-eval-cleaned",
+    "jsonschema",
     "smiles",
-    # "jsonschema",
-    # "sed",
 ]
 temps = ["0.2"]
 gap_sizes = {
-    "jsonschema_r": [0],  # , 1, 5],
     "jsonschema": [0],  # , 1, 5],
     "THUDM/humaneval-x/cpp": [0],  # , 1, 2],
-    "nmuendler/json-mode-eval-cleaned": [0],  # , 1, 5],
     "smiles": [0],  # , 1, 5],
-    "sed": [0],
 }
 step_sizes = [32]
 seeds = [0, 1, 2, 3]
 configs = [
     ("", "_synth"),
 ]
-constraineds = [True]
+constraineds = [True, False]
 
 
 def find_available_gpus(gpus, n):
@@ -133,7 +127,7 @@ while remaining_configs or running_configs:
     else:
         suffix = "nc"
     command = (
-        f"PYTHONPATH=. CUDA_VISIBLE_DEVICES={','.join(str(i) for i in cuda_devices)} python3 -m constrained_outoforder.eval.dllm.generic_inference "
+        f"PYTHONPATH=. CUDA_VISIBLE_DEVICES={','.join(str(i) for i in cuda_devices)} python3 -m constrained_diffusion.eval.dllm.generic_inference "
         f"--max-tokens 256 --model_name {model} --seed {seed} --temp {temp} --trace False  --dataset-name '{subset}' --inject_gap_size {gap_size} --max_total_injections {gap_size} --steps {num_step} "
         f"--constrained {constrained} --output_file 'results/{subset.replace('/', '_')}_{model.replace('/', '_')}_s={seed}_t={temp}_gs={gap_size}_sz={num_step}{name}_{suffix}.jsonl' {config}"
     )
