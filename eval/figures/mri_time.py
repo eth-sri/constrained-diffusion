@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
-Create the table for FIM results.
+Create the table for MRI results.
 """
 
-import functools
 import os
 import pathlib
 import re
@@ -17,9 +16,8 @@ from eval.figures.mri import DATASET_SIZES
 from eval.figures.util import process_file, format_with_ci
 
 
-
-
 results_dir = pathlib.Path(__file__).parent.parent.parent / "results"
+filter_file_path = pathlib.Path(__file__).parent.parent / "mri" / "filter.txt"
 
 MODELS = {
     "google_codegemma-7b": r"\codegemma",
@@ -28,13 +26,14 @@ MODELS = {
     "deepseek-ai_deepseek-coder-6.7b-base": r"\deepseekcsevenb",
     "deepseek-ai_deepseek-coder-33b-base": r"\deepseekcthirtyb",
 }
-FILE = "HumanEval_FIM_cpp_{i}_{model}_s={seed}_t=1_gs=0_synth_c.compiled.jsonl"
+FILE = "HumanEval_MRI_cpp_{i}_{model}_s={seed}_t=1_gs=0_synth_c.compiled.jsonl"
 
 
 def create_table(
     results_dir: str = results_dir, format: str = "latex_raw", ci: bool = False
 ):
     # columns: for each n-gapped dataset, syntax unconstrained, syntax constrained
+    filter_instances = open(filter_file_path, "r").read().splitlines(keepends=False)
     gaps = [1, 2, 3]
     seeds = [0, 1, 2, 3]
     headers = ["Model"] + ["Vanilla", "Syntax", "Diff", ""] * len(gaps)
@@ -51,7 +50,9 @@ def create_table(
                 file_path = os.path.join(
                     results_dir, FILE.format(i=gap, model=model, seed=seed)
                 )
-                result = process_file(file_path)
+                result = process_file(
+                    file_path, [f"{x}_spans_{gap}" for x in filter_instances]
+                )
                 if result is None:
                     print(f"Warning: file {file_path} is empty, skipping")
                     continue
@@ -69,9 +70,9 @@ def create_table(
                 (
                     # format_with_ci(results[f"unc_{field}"] * 100)[0],
                     format_with_ci(results[f"unc_{field}"] * 100)[0],
-                    f'''$_{{\\uparrow {format_with_ci(
+                    f"""$_{{\\uparrow {format_with_ci(
                         results[f"unc_{field2}"] * 100, ci=0.95, floatfmt=".0f"
-                    )[0]}\\%}}$''',
+                    )[0]}\\%}}$""",
                     "",
                 )
             )

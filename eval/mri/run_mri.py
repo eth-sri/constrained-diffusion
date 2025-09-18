@@ -28,15 +28,15 @@ def compute_needed_gpus(size_model, size_gpu):
 
 
 subsets = [
-    "HumanEval/FIM/cpp/1",
-    "HumanEval/FIM/cpp/2",
-    "HumanEval/FIM/cpp/3",
+    "HumanEval/MRI/cpp/1",
+    "HumanEval/MRI/cpp/2",
+    "HumanEval/MRI/cpp/3",
 ]
 temps = ["1"]
 gap_sizes = {
-    "HumanEval/FIM/cpp/1": [0],
-    "HumanEval/FIM/cpp/2": [0],
-    "HumanEval/FIM/cpp/3": [0],
+    "HumanEval/MRI/cpp/1": [0],
+    "HumanEval/MRI/cpp/2": [0],
+    "HumanEval/MRI/cpp/3": [0],
 }
 seeds = [0, 1, 2, 3]
 configs = [

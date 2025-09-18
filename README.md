@@ -141,7 +141,7 @@ python3 -m constrained_diffusion.eval.dllm.generic_inference \
   --task_id _37
 ```
 
-A general orchestration script for all experiments in the main paper is provided in `eval/fim/run_fim.py` and `eval/dllm/run_dllm.py`.
+A general orchestration script for all experiments in the main paper is provided in `eval/mri/run_mri.py` and `eval/dllm/run_dllm.py`.
 The results are stored in the `results/` directory, with each configuration's results in a separate file.
 
 ### Running Evaluation

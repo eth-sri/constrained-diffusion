@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
-Create the table for FIM results.
+Create the table for MRI results.
 """
 
-import functools
 import math
 import os
 import pathlib
@@ -15,6 +14,7 @@ from eval.figures.util import process_file, format_with_ci, custom_tabulate
 
 
 results_dir = pathlib.Path(__file__).parent.parent.parent / "results"
+filter_file_path = pathlib.Path(__file__).parent.parent / "mri" / "filter.txt"
 
 MODELS = {
     "bigcode_starcoder2-7b": r"\starcodertwo",
@@ -23,7 +23,7 @@ MODELS = {
     "deepseek-ai_deepseek-coder-6.7b-base": r"\deepseekcsevenb",
     "deepseek-ai_deepseek-coder-33b-base": r"\deepseekcthirtyb",
 }
-FILE = "HumanEval_FIM_cpp_{i}_{model}_s={seed}_t=1_gs=0_synth_c.compiled.jsonl"
+FILE = "HumanEval_MRI_cpp_{i}_{model}_s={seed}_t=1_gs=0_synth_c.compiled.jsonl"
 DATASET_SIZES = {
     1: 164,
     2: 161,
@@ -37,6 +37,7 @@ def create_table(
     functional: bool = False,
     ci: bool = False,
 ):
+    filter_instances = open(filter_file_path, "r").read().splitlines(keepends=False)
     # columns: for each n-gapped dataset, syntax unconstrained, syntax constrained
     gaps = [1, 2, 3]
     seeds = [0, 1, 2, 3]
@@ -68,7 +69,10 @@ def create_table(
                 file_path = os.path.join(
                     results_dir, FILE.format(i=gap, model=model, seed=seed)
                 )
-                result = process_file(file_path)
+                result = process_file(
+                    file_path,
+                    filtered_instances=[f"{x}_spans_{gap}" for x in filter_instances],
+                )
                 if result is None:
                     print(f"Warning: file {file_path} is empty, skipping")
                     continue
