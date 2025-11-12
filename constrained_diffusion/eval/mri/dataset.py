@@ -6,6 +6,9 @@ from constrained_diffusion.eval.mri.datasets.generic import DataSet
 from constrained_diffusion.eval.mri.datasets.humaneval_mri_cpp import (
     HumanEvalMriDataSet,
 )
+from constrained_diffusion.eval.mri.datasets.humaneval_mri_cpp_lines import (
+    HumanEvalMriLinesDataSet,
+)
 
 ALL_DATASETS: dict[str, DataSet] = {}
 
@@ -32,3 +35,12 @@ def load_dataset(name: str) -> DataSet:
 register_dataset("HumanEval/MRI/cpp/1", HumanEvalMriDataSet(language="cpp", spans=1))
 register_dataset("HumanEval/MRI/cpp/2", HumanEvalMriDataSet(language="cpp", spans=2))
 register_dataset("HumanEval/MRI/cpp/3", HumanEvalMriDataSet(language="cpp", spans=3))
+register_dataset(
+    "HumanEval/MRI/cpp/1/lines", HumanEvalMriLinesDataSet(language="cpp", spans=1)
+)
+register_dataset(
+    "HumanEval/MRI/cpp/2/lines", HumanEvalMriLinesDataSet(language="cpp", spans=2)
+)
+register_dataset(
+    "HumanEval/MRI/cpp/3/lines", HumanEvalMriLinesDataSet(language="cpp", spans=3)
+)
