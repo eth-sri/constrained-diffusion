@@ -32,5 +32,10 @@ dependencies = [
 "pytest-timeout"
 ]
 
+[dependency-groups]
+dev = [
+    "pre-commit"
+]
+
 [tool.setuptools.packages.find]
 include = ["constrained_diffusion", "eval"]
