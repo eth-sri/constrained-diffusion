@@ -21,9 +21,9 @@ from multiprocessing import get_context, TimeoutError
 from tqdm import tqdm
 
 DATASET_CHECKER_MAP = {
-    "HumanEval/FIM/cpp/1": "dllm.cpp",
-    "HumanEval/FIM/cpp/2": "dllm.cpp",
-    "HumanEval/FIM/cpp/3": "dllm.cpp",
+    "HumanEval/MRI/cpp/1": "dllm.cpp",
+    "HumanEval/MRI/cpp/2": "dllm.cpp",
+    "HumanEval/MRI/cpp/3": "dllm.cpp",
     "jsonschema": "dllm.jsonmode",
     "THUDM/humaneval-x/cpp": "dllm.cpp",
     "smiles": "dllm.smiles",
