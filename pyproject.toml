@@ -34,7 +34,10 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pre-commit"
+    "pre-commit",
+    "matplotlib",
+    "scipy",
+    "tabulate",
 ]
 
 [tool.setuptools.packages.find]
