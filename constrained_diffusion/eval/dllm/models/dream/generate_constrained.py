@@ -274,6 +274,7 @@ def diffusion_generate(
     return result
 
 
+@torch.no_grad()
 def _sample(
     model,
     input_ids: torch.LongTensor,
