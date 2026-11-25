@@ -17,11 +17,11 @@ from rustformlang.cfg import CFG
 from rustformlang.fa.bytes_dfa import regex_to_dfa, regex_escape
 from rustformlang.fa.epsilon_nfa import ENFA
 
-CPP_dec_number = r"\x02(0|[1-9]\d*)\x03"
-CPP_decimal_part = r"\.\x02\d+\x03"
-CPP_exp = r"\x02[eE](\x03[+-]\x02)?\d+\x03"
+CPP_dec_number = r"\x02(0|[1-9][0-9]*)\x03"
+CPP_decimal_part = r"\.\x02[0-9]+\x03"
+CPP_exp = r"\x02[eE](\x03[+-]\x02)?[0-9]+\x03"
 CPP_float_number = rf"({CPP_dec_number}({CPP_decimal_part})?({CPP_exp})?|{CPP_decimal_part}|{CPP_decimal_part[:-4]}{CPP_exp[4:]}|{CPP_dec_number[:-4]}{CPP_exp[4:]})"
-CPP_hex_number = r"0x[\da-fA-F]*"
+CPP_hex_number = r"0x[0-9a-fA-F]*"
 CPP_oct_number = r"0o[0-7]*"
 CPP_bin_number = r"0b[0-1]*"
 

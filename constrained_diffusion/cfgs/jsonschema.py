@@ -95,7 +95,7 @@ JSON_LEX_TOKENS = {"{", "}", ",", "[", "]", ":"}
 JSON_LEX_MAP = {
     # NOTE: need to align with other tokens to avoid duplication
     "stringToken": json_string_pattern_compiled,
-    "numberToken": regex_to_dfa(r"-?(0|[1-9]\d*)(\.\d+)?([eE][+-]?\d+)?"),
+    "numberToken": regex_to_dfa(r"-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?"),
     "boolNullToken": regex_to_dfa(r"true|false|null"),
     **{token: regex_escape(token) for token in JSON_LEX_TOKENS},
 }
@@ -212,9 +212,9 @@ second_r = with_leading_zeros(0, 59)
 
 STRING_LEXING = {
     "string": json_string_pattern_compiled,
-    "date": rf'"\d{{4}}-{month_r}-{day_r}"',
+    "date": rf'"[0-9]{{4}}-{month_r}-{day_r}"',
     "email": r'"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}"',
-    "date-time": rf'"\d{{4}}-{month_r}-{day_r}T{hour_r}:{minute_r}:{second_r}(\.\d+)?(Z|[+-]{hour_r}:{second_r})"',
+    "date-time": rf'"[0-9]{{4}}-{month_r}-{day_r}T{hour_r}:{minute_r}:{second_r}(\.[0-9]+)?(Z|[+-]{hour_r}:{second_r})"',
 }
 STRING_LEXING = {
     k: regex_to_dfa(v) if isinstance(v, str) else v for k, v in STRING_LEXING.items()

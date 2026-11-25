@@ -28,7 +28,7 @@ CompiledLexMap = RustLexMap
 
 LEX_MAP = {
     # both original and reversed
-    "lexNumber": r"((-?[1-9]\d*)|0)",
+    "lexNumber": r"((-?[1-9][0-9]*)|0)",
     "lexString": r'"[^\n\r"]*"',
     "lexNull": r"null",
     "lexTrue": r"true",
