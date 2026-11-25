@@ -160,7 +160,8 @@ pub fn lex(
     let Token::Word(word_str) = word else {
         panic!("Expected a Word token, got: {:?}", word);
     };
-    match lex_cache().get(&(word_str.clone(), is_first)) {
+    let cache_key = (word_str.clone(), is_first);
+    match lex_cache().get(&cache_key) {
         Some(cached) => return cached.clone(),
         None => {}
     }
@@ -257,13 +258,7 @@ pub fn lex(
         }
     }
     // cache the results
-    lex_cache().insert(
-        (
-            word_str.clone().into_iter().map(char::from).collect(),
-            is_first,
-        ),
-        final_splits.clone().into_iter().collect(),
-    );
+    lex_cache().insert(cache_key, final_splits.clone().into_iter().collect());
     // return the final splits
     final_splits.into_iter().collect()
 }
