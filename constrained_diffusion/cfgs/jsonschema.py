@@ -184,9 +184,14 @@ def boolean_to_cfg() -> Tuple[CFG, LexMap, Dict[str, CFG]]:
     )
 
 
+def ascii_range_regex(mini: int | None, maxi: int | None) -> str:
+    # range_ex >= 0.0.4 writes digits as \d, which also matches non-ASCII digits here
+    return range_regex(mini, maxi).replace(r"\d", "[0-9]")
+
+
 def int_to_cfg(schema: dict) -> Tuple[CFG, LexMap, Dict[str, CFG]]:
     mini, maxi = schema.get("minimum"), schema.get("maximum")
-    int_regex = range_regex(mini, maxi)
+    int_regex = ascii_range_regex(mini, maxi)
     return (
         CFG.from_text(f"S -> intToken({mini},{maxi})", "S"),
         {f"intToken({mini},{maxi})": int_regex},
@@ -201,7 +206,7 @@ def number_to_cfg(schema: dict) -> Tuple[CFG, LexMap, Dict[str, CFG]]:
 
 def with_leading_zeros(min: int, max: int) -> str:
     assert min < 10 and max < 100, "Only two digits are supported, single digit minimum"
-    return f"(0{range_regex(min, 9)}|{range_regex(10, max)})"
+    return f"(0{ascii_range_regex(min, 9)}|{ascii_range_regex(10, max)})"
 
 
 month_r = with_leading_zeros(1, 12)
