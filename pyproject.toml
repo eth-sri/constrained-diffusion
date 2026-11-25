@@ -23,7 +23,7 @@ dependencies = [
 "datasets==3.6.0",
 "accelerate",
 "regex",
-"range-ex",
+"range-ex>=0.0.6",
 "jsonschema",
 "stopit",
 "cachier",
