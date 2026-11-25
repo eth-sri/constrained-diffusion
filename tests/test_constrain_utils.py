@@ -1826,5 +1826,18 @@ int main(){
     assert all(res), "Generated language is not empty for all iterations"
 
 
+def test_lex_does_not_depend_on_earlier_calls():
+    lex_map = compile_lex_map(LEX_MAP)
+    a = 'é"'  # U+00E9, UTF-8 bytes C3 A9
+    b = a.encode("utf-8").decode("latin-1")  # 'Ã©"', a different word
+
+    reset_lex_cache()
+    expected = lex(b, lex_map, is_first=False)
+
+    reset_lex_cache()
+    lex(a, lex_map, is_first=False)
+    assert lex(b, lex_map, is_first=False) == expected
+
+
 if __name__ == "__main__":
     test_schema_as_cfg_2()
