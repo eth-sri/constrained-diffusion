@@ -7,7 +7,7 @@ from rustformlang.fa.bytes_dfa import regex_escape
 # --- Lexical Tokens for SMILES ---
 
 SMILES_LEX_MAP = {
-    "digit": r"\d",
+    "digit": r"[0-9]",
     "fifteen": r"1[0-5]",  # Matches digits 10-15
     "organicSymbol": "(B|Br|Cl|C|[NOPSFI]|[bcnops]|At|Ts)",
     "bond": r"(=|#|/|$|\\)",
