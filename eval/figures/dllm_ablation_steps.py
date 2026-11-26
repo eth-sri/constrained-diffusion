@@ -26,7 +26,7 @@ FILE = "{dataset}_{model}_s={seed}_t=0.2_gs=0_sz={stepsize}_synth_c.compiled.jso
 DATASET_SIZES = {
     "smiles": 167,
     "THUDM_humaneval-x_cpp": 164,
-    "jsonschema": 272,
+    "jsonschema": 269,
 }
 
 
