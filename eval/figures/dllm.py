@@ -30,7 +30,7 @@ FILE = "{dataset}_{model}_s={seed}_t=0.2_gs=0_sz=32_synth_c.compiled.jsonl"
 DATASET_SIZES = {
     "smiles": 167,
     "THUDM_humaneval-x_cpp": 164,
-    "jsonschema": 272,
+    "jsonschema": 269,
 }
 
 

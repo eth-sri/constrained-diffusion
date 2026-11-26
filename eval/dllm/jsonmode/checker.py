@@ -5,7 +5,6 @@ This module provides functions to check the syntax and schema conformance of JSO
 
 import difflib
 import json
-from pathlib import Path
 
 from datasets import load_dataset
 
@@ -13,10 +12,12 @@ from constrained_diffusion.cfgs.jsonschema import schema_to_cfg
 from constrained_diffusion.constrain_utils import compile_lex_map, lex
 
 
-JSON_DATASET = load_dataset("eth-sri/json-mode-eval-extended", split="test").to_iterable_dataset()
+JSON_DATASET = load_dataset(
+    "eth-sri/json-mode-eval-extended", split="test"
+).to_iterable_dataset()
 
-SCHEMAS = [x["schema"] for x in JSON_DATASET]
-REF_SOLUTIONS = [x["output"] for x in JSON_DATASET]
+SCHEMAS = {x["instance_id"]: x["schema"] for x in JSON_DATASET}
+REF_SOLUTIONS = {x["instance_id"]: x["output"] for x in JSON_DATASET}
 
 
 def check_instance(output, timeout=None):
@@ -29,9 +30,9 @@ def check_instance(output, timeout=None):
     Returns:
         A dictionary with the check results
     """
-    task_id = int(output["instance_id"].split("_")[-1])
+    instance_id = output["instance_id"]
 
-    schema = json.loads(SCHEMAS[task_id])
+    schema = json.loads(SCHEMAS[instance_id])
     schema_grammar, lex_map, subtokens = schema_to_cfg(schema)
     lex_map = compile_lex_map(lex_map, subtokens=subtokens)
     instance = output["extracted"]
@@ -47,7 +48,7 @@ def check_instance(output, timeout=None):
     compiler_output = f"accepted {compilable}, lexings {lexings}"
     try:
         # Check if the instance matches the reference solution
-        ref_solution = json.loads(REF_SOLUTIONS[task_id])
+        ref_solution = json.loads(REF_SOLUTIONS[instance_id])
         ref_solution = json.dumps(ref_solution, indent=4)
         json_instance = json.dumps(json.loads(instance), indent=4)
         passes_test = ref_solution == json_instance
